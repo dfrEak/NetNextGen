@@ -29,6 +29,12 @@ FLAGS = flags.FLAGS
 
 
 def main(_):
+  env = os.environ
+  print(env['TF_CONFIG'])
+  import json
+  print(json.loads(env['TF_CONFIG']))
+  exit(1)
+
   assert(FLAGS.num_train_steps > 0)
   if FLAGS.pdb:
     debugger = pdb.Pdb(stdout=sys.__stdout__)
